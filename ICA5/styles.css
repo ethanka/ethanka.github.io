@@ -1,0 +1,52 @@
+body {
+    background-color: #fff;
+    color: #333;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 1em;
+    margin: 0;
+  }
+  
+  h1 {
+    color: hotpink;
+    font-size: 2em;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    border-bottom: 10px dotted #800080;
+  }
+  
+  h2.contact-heading {
+    font-style: italic; /* Italicize "Contact information" */
+  }
+  
+  .contact-info {
+    
+    a:hover {
+      color: #00cc00; /* Green color on hover */
+    }
+    
+      background-color: #eeeeee; /* Background color for the ul */
+      padding: 10px;
+      list-style-type: none; /* Remove default list styles */
+      margin: 0;
+
+    
+    border: 5px solid #800080; /* Purple box outline */
+    padding: 10px;
+    margin-top: 10px;
+    
+  }
+  
+  
+  .job-title {
+    color: #999999;
+    font-weight: bold;
+  }
+  
+  a:link,
+  a:visited {
+    color: #fb6542;
+  }
+  
+  a:hover {
+    text-decoration: none;
+  }
+  
