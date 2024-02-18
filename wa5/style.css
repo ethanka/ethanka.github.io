@@ -1,0 +1,63 @@
+body {
+    margin: 0;
+    font-family: 'Garamond', Garamond;
+    background-color: #f4f4f4; /* Light grey background */
+  }
+  
+  .card {
+    display: flex;
+    flex-direction: column;
+    width: 377px; /* Set the width as per the image */
+    border-radius: 8px;
+    overflow: hidden;
+    font-size: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: auto;
+    background-color: #ff6347; /* Tomato color for the background */
+  }
+  
+  .card header {
+    background-color: #0000ff; /* Blue color for the header */
+    color: white;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .card article {
+    display: flex;
+    padding: 20px;
+    background-color: #ffffff; /* White for the middle section */
+  }
+  
+  .info {
+    flex-grow: 1;
+    color: black; /* Text color for the middle section */
+  }
+  
+  .image-container {
+    margin-left: 10px;
+  }
+  
+  .card img {
+    width: 100px; /* Adjust width as needed */
+    height: 100px; /* Adjust height to make the image square */
+    object-fit: cover; /* This will ensure the image covers the area without stretching */
+  }
+  
+  .card p {
+    margin: 0;
+    line-height: 1.5;
+  }
+  
+  .card strong {
+    color: black;
+    font-weight: bold;
+  }
+  
+  .card footer {
+    background-color: #808080; /* Gray color for the footer */
+    color: white;
+    padding: 10px;
+    text-align: center;
+  }
+  
