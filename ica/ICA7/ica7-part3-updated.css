@@ -1,0 +1,39 @@
+
+/* Default styles */
+#narrowScreen p {
+    color: green; /* Default color */
+}
+#wideScreen p {
+    color: red; /* Default color */
+}
+#shortScreen p {
+    color: turquoise; /* Default color */
+}
+#tallScreen p {
+    color: lavender; /* Default color */
+}
+
+/* Media queries */
+@media (max-width: 600px) {
+    #narrowScreen p {
+        color: purple; /* Color for narrow screens */
+    }
+}
+
+@media (min-width: 801px) {
+    #wideScreen p {
+        color: lightblue; /* Color for wide screens */
+    }
+}
+
+@media (max-height: 500px) {
+    #shortScreen p {
+        color: yellow; /* Color for short screens */
+    }
+}
+
+@media (min-height: 801px) {
+    #tallScreen p {
+        color: orange; /* Color for tall screens */
+    }
+}
