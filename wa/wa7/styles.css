@@ -1,0 +1,89 @@
+
+/* General styles */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Header styles */
+.logo {
+  font-size: 32px; /* Larger font size for the header */
+  color: #000;
+  text-align: center;
+  padding: 20px 0;
+  background-color: #000; /* Black background */
+  color: #fff; /* White text */
+}
+
+/* Navigation styles */
+nav {
+  background-color: #000; /* Black background for the nav bar */
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+  position: sticky;
+  top: 0;
+}
+
+nav li {
+  display: inline;
+}
+
+nav a {
+  text-decoration: none;
+  color: white; /* White text color */
+  padding: 10px 15px;
+  display: block;
+}
+
+/* Main layout styles */
+main {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+article, aside {
+  flex: 1;
+}
+
+/* Article image styles */
+article img.feature {
+  float: left;
+  margin-right: 20px;
+  max-width: 50%;
+}
+
+/* Photography section styles */
+.photos {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+}
+
+.photos img {
+  width: 100%;
+  display: block;
+}
+
+/* Media queries */
+@media (min-width: 501px) {
+  /* Styles for screens larger than 500px */
+}
+
+@media (max-width: 500px) {
+  /* Styles for screens smaller than 500px */
+  nav ul {
+    flex-direction: column;
+  }
+
+  main {
+    flex-direction: column;
+  }
+}
