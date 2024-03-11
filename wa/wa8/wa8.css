@@ -1,0 +1,37 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: deepskyblue; /* Updated background color to a nice blue */
+    font-family: 'CursiveFont', cursive; /* Updated font-family to something weird */
+}
+
+nav {
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: darkcyan;
+}
+
+nav a {
+    width: 10vw;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+}
+
+#rotating-wheel {
+    margin-top: 10px;
+}
+
+#rotating-wheel img {
+    width: 20vw;
+    height: 30vh;
+    transition: transform 0.5s ease; /* Added transition for smooth rotation */
+}
+
+#rotating-wheel.clickable:hover img {
+    transform: rotate(360deg); /* Applied rotation on hover */
+    transition: transform 0.5s ease; /* Added transition for smooth rotation */
+}
