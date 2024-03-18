@@ -90,3 +90,42 @@ margin-right: 20%;
     color: rgb(0, 0, 0); /* Text color */
     font-family: Arial, sans-serif; /* Adjust as needed */
 }
+
+
+@media only screen and (max-width: 400px) {
+    .main-container {
+        padding: 20px;
+    }
+
+    .heading.medium {
+        font-size: 24px; /* Adjusted for smaller screens */
+    }
+
+    .heading.large {
+        font-size: 32px; /* Adjusted for smaller screens */
+    }
+
+    .squiggle, .event-info-container, .image-container {
+        width: 100%; /* Makes these elements full width */
+        margin-top: 20px; /* Adds some spacing */
+        justify-content: center; /* Center these elements */
+    }
+
+    .info-box {
+        width: 100%; /* Adjusted for smaller screens */
+        text-align: center; /* Center align the text */
+    }
+
+    .large-image-container img {
+        height: auto; /* Adjust height to maintain aspect ratio */
+    }
+
+    .grid-container {
+        grid-template-columns: 1fr; /* Adjust grid to single column */
+    }
+
+    .bottom-bar {
+        height: 50px; /* Increase height for better visibility */
+        font-size: 16px; /* Increase font size for readability */
+    }
+}
