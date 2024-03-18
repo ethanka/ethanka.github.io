@@ -112,13 +112,12 @@ margin-right: 20%;
     }
 
     .info-box {
-        width: 50%; /* Adjusted for smaller screens */
+        width: 100%; /* Adjusted for smaller screens */
         text-align: center; /* Center align the text */
     }
 
     .large-image-container img {
         height: auto; /* Adjust height to maintain aspect ratio */
-        size-adjust: 50%;
     }
 
     .grid-container {
@@ -129,7 +128,8 @@ margin-right: 20%;
         height: 50px; /* Increase height for better visibility */
         font-size: 16px; /* Increase font size for readability */
     }
-    
+}
+
     .image-container img {
             width: 50%; /* Reduces the image width to 50% of its container */
             height: auto; /* Adjusts the height automatically to maintain aspect ratio */
