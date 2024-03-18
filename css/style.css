@@ -118,6 +118,7 @@ margin-right: 20%;
 
     .large-image-container img {
         height: auto; /* Adjust height to maintain aspect ratio */
+        size-adjust: 50%;
     }
 
     .grid-container {
