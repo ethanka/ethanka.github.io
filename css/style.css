@@ -112,7 +112,7 @@ margin-right: 20%;
     }
 
     .info-box {
-        width: 100%; /* Adjusted for smaller screens */
+        width: 50%; /* Adjusted for smaller screens */
         text-align: center; /* Center align the text */
     }
 
