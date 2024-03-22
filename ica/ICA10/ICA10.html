@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+            background-color: #ffffff; /* Default background color */
+        }
+    </style>
+</head>
+<body>
+    <h1>This is text</h1>
+    <button type="button" id="textButton">Change Text</button>
+    <button type="button" id="colorButton">Change Color</button>
+
+    <script>
+        const textButton = document.getElementById("textButton");
+        const colorButton = document.getElementById("colorButton");
+        const heading = document.querySelector("h1");
+
+        textButton.addEventListener('click', changeText);
+        colorButton.addEventListener('click', changeColor);
+
+        function changeText() {
+            heading.textContent = "Yeah";
+        }
+
+        function changeColor() {
+            const randomColor = getRandomColor();
+            document.body.style.backgroundColor = randomColor;
+        }
+
+        function getRandomColor() {
+            const letters = '0123456789ABCDEF';
+            let color = '#';
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+    </script>
+</body>
+</html>
