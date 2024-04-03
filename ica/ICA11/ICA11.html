@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Custom Message Box</title>
+<style>
+  .msgBox {
+    border: 1px solid black;
+    padding: 10px;
+    margin: 10px;
+    background-color: lightgray;
+  }
+</style>
+</head>
+<body>
+<button onclick="displayMessage('Hello, this is a message!')">Show Message</button>
+
+<script>
+  function displayMessage(msgText) {
+    const body = document.body;
+
+    const panel = document.createElement("div");
+    panel.setAttribute("class", "msgBox");
+    body.appendChild(panel);
+
+    const msg = document.createElement("p");
+    msg.textContent = msgText;
+    panel.appendChild(msg);
+
+    const closeBtn = document.createElement("button");
+    closeBtn.textContent = "x";
+    panel.appendChild(closeBtn);
+
+    closeBtn.addEventListener("click", () => panel.parentNode.removeChild(panel));
+  }
+</script>
+</body>
+</html>
