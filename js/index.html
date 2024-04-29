@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CU Boulder 2024 Revenue</title>
+<style>
+  body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; }
+  h1 { color: #0043A9; } /* CU Blue for the title */
+  #revenueDisplay { font-size: 48px; margin-bottom: 20px; }
+  #dragArea { display: flex; flex-direction: column; align-items: center; height: 400px; }
+  #dollar { width: 150px; cursor: grab; margin-bottom: 20px; } /* Larger and spaced */
+  #dragInstruction { font-size: 16px; color: green; } /* Instructions for dragging */
+  #logo, #degree { width: 200px; transition: opacity 2s; position: absolute; } /* Positioned absolutely for overlap */
+  #degree { opacity: 0; transition: opacity 2s; }
+  #dropZone { position: relative; width: 200px; height: 200px; border: 2px dashed #ccc; padding: 10px; align-items: center; justify-content: center; display: flex; } /* Drop zone styling */
+  #smiley { width: 100px; position: fixed; bottom: 10px; left: -160px; transition: left 2s; }
+</style>
+</head>
+<body>
+<h1 id="pageTitle">CU Boulder 2024 Revenue</h1>
+<div id="revenueDisplay">Loading...</div>
+<div id="dragArea">
+  <span id="dragInstruction">Drag Me!</span>
+  <img id="dollar" src="dollar100.png" draggable="true" onDragStart="drag(event)">
+  <div id="dropZone" onDragOver="allowDrop(event)" onDrop="drop(event)">
+    <img id="logo" src="culogo.png">
+    <img id="degree" src="degree.png">
+  </div>
+</div>
+<img id="smiley" src="happyface.png">
+
+<script>
+    let dropCount = 0;
+    const totalAnnualRevenue = 2300000000; // $2.3 billion per year
+    const revenuePerDay = totalAnnualRevenue / 365; // Daily revenue
+    const revenuePerSecond = revenuePerDay / (24 * 3600); // Revenue per second
+    const updateInterval = 100; // Update every 100 milliseconds
+    let currentRevenue = parseFloat(localStorage.getItem('currentRevenue'));
+  
+    function updateRevenue() {
+      if (!currentRevenue) {
+        const startOfYear = new Date(new Date().getFullYear(), 0, 1);
+        const now = new Date();
+        const dayOfYear = Math.floor((now - startOfYear) / (1000 * 60 * 60 * 24));
+        currentRevenue = revenuePerDay * dayOfYear;
+      }
+      currentRevenue += revenuePerSecond * (updateInterval / 1000);
+      localStorage.setItem('currentRevenue', currentRevenue.toString());
+      document.getElementById('revenueDisplay').textContent = `$${Math.round(currentRevenue).toLocaleString()}`;
+    }
+  
+    setInterval(updateRevenue, updateInterval);
+  
+    function allowDrop(event) {
+      event.preventDefault();
+    }
+  
+    function drag(event) {
+      event.dataTransfer.setData("text/plain", event.target.id);
+    }
+  
+    function drop(event) {
+      event.preventDefault();
+      const data = event.dataTransfer.getData("text");
+      if (data === "dollar") {
+        dropCount++;
+        const logoOpacity = 1 - dropCount * 0.1;
+        const degreeOpacity = dropCount * 0.1;
+        document.getElementById('logo').style.opacity = logoOpacity;
+        document.getElementById('degree').style.opacity = degreeOpacity;
+        slideSmiley();
+        if (dropCount >= 10) {
+          document.getElementById('logo').style.opacity = 0; // Ensure logo is fully invisible
+        }
+      }
+    }
+  
+    function slideSmiley() {
+      const smiley = document.getElementById('smiley');
+      smiley.style.left = '100%'; // Start the slide across the screen
+      setTimeout(() => {
+        smiley.style.left = '-160px'; // Reset position off-screen after sliding
+      }, 2000); // Duration of the slide
+    }
+  
+    // Updating the title with the current date, excluding the year
+    const today = new Date();
+    const dateString = today.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' });
+    document.getElementById('pageTitle').textContent += ` - ${dateString}`;
+  
+  </script>
+  
+</body>
+</html>
